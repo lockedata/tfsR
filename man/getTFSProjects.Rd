@@ -19,6 +19,8 @@ getTFSProjects(URL, Credentials, ..., Flatten = TRUE,
 
 \item{Flatten}{If Flatten=FALSE, the results will be returned in the native list format}
 
+\item{URLSub}{Modify this if you need to reference somewhere other than DefaultCollection}
+
 \item{URLsub}{Modify this if you need to reference somewhere other than DefaultCollection}
 
 \item{URL}{URL for root TFS e.g. http://stefflocke.visualstudio.com}
@@ -28,8 +30,6 @@ getTFSProjects(URL, Credentials, ..., Flatten = TRUE,
 \item{...}{Additional arguments to httr::GET}
 
 \item{Flatten}{If Flatten=FALSE, the results will be returned in the native list format}
-
-\item{URLsub}{Modify this if you need to reference somewhere other than DefaultCollection}
 }
 \value{
 projects    Data.table (unless Flatten=FALSE, in which case a list) with each project, GUID, & type
@@ -52,7 +52,7 @@ authcreds<-httr::authenticate("stephstemp@grr.la","UsedForExamples")
 tfsprojects<-getTFSProjects(tfs,authcreds)
 # simple example
 tfs<-"https://stefflocke.visualstudio.com"
-authcreds<-httr::authenticate("stephstemp@grr.la","UsedForExamples")
+authcreds<-httr::authenticate("tfsexample","UsedForExampl3s")
 tfsprojects<-getTFSProjects(tfs,authcreds)
 }
 \seealso{
