@@ -28,13 +28,14 @@ new Git repositories.
 }
 \examples{
 # simple example
-tfs<-"https://stefflocke.visualstudio.com"
-authcreds<-httr::authenticate("tfsexample","UsedForExampl3s")
-tfsprojects<-getTFSProjects(tfs,authcreds)
+tfs           <- "https://stefflocke.visualstudio.com"
+authcreds     <- httr::authenticate("tfsexample","UsedForExampl3s")
+tfsprojects   <- getTFSProjects(tfs,authcreds)
 }
 \seealso{
-\code{\link{bar}}
+\code{\link{createTFSRepository}}
 }
-\keyword{bar}
-\keyword{foo}
+\keyword{list}
+\keyword{repository}
+\keyword{tfs}
 
