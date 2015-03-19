@@ -8,7 +8,7 @@
 #' @param Credentials  `httr::authenticate("username","password")` object
 #' @param ...          Additional arguments to httr::GET
 #' @param Flatten      If Flatten=FALSE, the results will be returned in the native list format
-#' @param URLsub       Modify this if you need to reference somewhere other than DefaultCollection
+#' @param URLSub       Modify this if you need to reference somewhere other than DefaultCollection
 #' 
 #' @return projects    Data.table (unless Flatten=FALSE, in which case a list) with each project, GUID, & type
 #'
@@ -19,7 +19,7 @@
 #' @examples
 #' # simple example
 #' tfs<-"https://stefflocke.visualstudio.com"
-#' authcreds<-httr::authenticate("stephstemp@@grr.la","UsedForExamples")
+#' authcreds<-httr::authenticate("tfsexample","UsedForExampl3s")
 #' tfsprojects<-getTFSProjects(tfs,authcreds) 
 #'
 #' @export
