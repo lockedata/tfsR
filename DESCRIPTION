@@ -10,5 +10,6 @@ Suggests: testthat,
     knitr
 Imports: httr,
     data.table,
-    jsonlite
+    jsonlite,
+    random
 VignetteBuilder: knitr
