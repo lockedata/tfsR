@@ -9,5 +9,6 @@ LazyData: true
 Suggests: testthat,
     knitr
 Imports: httr,
-    RJSONIO
+    data.table,
+    jsonlite
 VignetteBuilder: knitr
