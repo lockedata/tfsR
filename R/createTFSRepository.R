@@ -26,6 +26,8 @@
 #' @export
 
 createTFSRepository<-function(URL,Credentials,ParentProject,NewRepo,...,URLSub="DefaultCollection"){
+  if (length(NewRepo)>1) stop("Sorry, you can only put one repository in at a time")
+  
   # Construct API URL
   TFSURL         <- paste(URL,URLSub,
                           "_apis/git/repositories?api-version=1.0", sep="/")

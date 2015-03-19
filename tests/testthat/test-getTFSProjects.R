@@ -19,3 +19,9 @@ test_that("Additional parameters work as expected" , {
   expect_equal(class(tfsprojects$value[[1]]$project),"list")
   
 })
+
+test_that("Errors when passed a vector of URLS",{
+  tfs<-c("https://stefflocke.visualstudio.com",
+         "https://stefflocke.visualstudio.com")
+  expect_error(getTFSProjects(tfs,authcreds))
+})
