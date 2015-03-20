@@ -31,10 +31,12 @@ Since you need to provide credentials to these functions, it is anticpated that 
 ## Get info on existing repositories
 A great place to start is a) verifying you can connect to your TFS and b) see what projects you could create repositories under
 ```{r}
+library(tfsR)
+
 tfs          <-"https://stefflocke.visualstudio.com"
 authcreds    <-httr::authenticate("tfsexample","UsedForExampl3s")
 repositories <-getTFSProjects(tfs,authcreds)
-kable(repositories)
+knitr::kable(repositories)
 ```
 
 ## Create a new repository
