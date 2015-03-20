@@ -36,6 +36,7 @@ library(tfsR)
 tfs          <-"https://stefflocke.visualstudio.com"
 authcreds    <-httr::authenticate("tfsexample","UsedForExampl3s")
 repositories <-getTFSProjects(tfs,authcreds)
+
 knitr::kable(repositories)
 ```
 
@@ -44,7 +45,7 @@ TFS doesn't allow you to create new projects so if you want to create a new repo
 
 You don't want to start nesting repositories so you need to make the repository under a top-level project. As such, in this bit of functionality, you provide the name of the top-level project which you want to put your repository, and it goes away and gets a GUID if the project exists and is a top-level project, then tells the API to create a repository in it.
 
-```{r}
+```{r, warning=FALSE}
 tfs          <-"https://stefflocke.visualstudio.com"
 authcreds    <-httr::authenticate("tfsexample","UsedForExampl3s")
 parentproj   <-"GitRepoContainer"
