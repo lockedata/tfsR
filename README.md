@@ -8,7 +8,8 @@ The package leaves existing git source control functionality to other packages/ 
 ```{r}
 if (!require(devtools))
   install.packages("devtools")
-devtools::install_github("stephlocke/tfsR")
+devtools::install_github("stephlocke/tfsR",
+                         build_vignettes = TRUE)
 ```
 
 ## Setup
