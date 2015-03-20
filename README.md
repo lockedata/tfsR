@@ -4,6 +4,13 @@ If you have/want to work with R using git repositories in TFS (either on-premise
 
 The package leaves existing git source control functionality to other packages/ facilities.
 
+## Install tfsR
+```{r}
+if (!require(devtools))
+  install.packages("devtools")
+devtools::install_github("stephlocke/tfsR")
+```
+
 ## Setup
 
 You must have a username (often an email address or AD account) and password for connecting. That's basically it!
