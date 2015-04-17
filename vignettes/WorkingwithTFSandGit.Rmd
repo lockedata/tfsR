@@ -9,26 +9,32 @@ vignette: >
   \usepackage[utf8]{inputenc}
 ---
 
-If you have/want to work with R using git repositories in TFS (either on-premises or via Visual Studio Online), this package saves you having to have Visual Studio (installed on your machine or online), and allows you directly manage git repositories within TFS.
+If you have/want to work with R using git repositories in TFS (either on-premises or via Visual Studio Online), this package saves you having to have Visual Studio (installed on your machine or online), and allows you directly create git repositories within TFS.
 
-The package leaves existing git source control functionality to other packages/ facilities.
+## tfsR Information
 
-## Setup
+### Setup
 You must have a username (often an email address or AD account) and password for connecting. That's basically it!
 
-## Intended use
-Since you need to provide credentials to these functions, it is anticpated that you would use these on an ad-hoc basis in much the same way you would use `devtools`. It's a great way to quickly setup a repository if you need to get your stuff into source control.
+### Intended use
+Since you need to provide credentials to these functions, it is anticipated that you would use these on an ad-hoc basis in much the same way you would use `devtools`. 
+
+It's a great way to quickly setup a repository if you need to get your stuff into source control.
+
+In terms of actually using your repositories once they're created, I recommend `git2r`.
 
 ## Limitations
 
-- The active components use a Team Project containing many git repositories - this means any backlogs etc that you might wish to use need to be implemented for the entire project. As such, if you want different backlogs and so forth, you will need to create projects via the GUI since no API command exists for the creation of projects.
+- The active components use a Team Project with Git selected as the engine for it
+- Due to the lack of an API call for creating new projects, it is anticipated that you use this to create repositories within a "parent" or container project.
+- If you need seperate backlogs etc, you'll have to create new Projects in the GUI
 - This only works currently with *basic authentication*, OAuth2.0 may follow
 - `getTFSProjects` will only handle a single TFS URL at a time (`httr` restriction)
 - `createTFSRepository` will only handle a single repository at a time, to maintain consistency
 
+## Using tfsR
 
-
-## Get info on existing repositories
+### Get info on existing repositories
 A great place to start is a) verifying you can connect to your TFS and b) see what projects you could create repositories under
 ```{r}
 library(tfsR)
@@ -40,7 +46,7 @@ repositories <-getTFSProjects(tfs,authcreds)
 knitr::kable(repositories)
 ```
 
-## Create a new repository
+### Create a new repository
 TFS doesn't allow you to create new projects so if you want to create a new repository, you have to do it in an existing project or go to the GUI and manually create one (there is no API call for this).
 
 You don't want to start nesting repositories so you need to make the repository under a top-level project. As such, in this bit of functionality, you provide the name of the top-level project which you want to put your repository, and it goes away and gets a GUID if the project exists and is a top-level project, then tells the API to create a repository in it.
@@ -53,5 +59,5 @@ newrepo      <- as.character(random::randomStrings(n=1, len=6))
 createdrepo  <- createTFSRepository(tfs,authcreds,parentproj,newrepo)
 ```
 
-This will provide you with the URL you need to be able to push and pull commits to. In this case it has created a repository called `r newrepo` which can be interacted with at the URL `r createdrepo`
+This will provide you with the URL you need to be able to push and pull commits to. In this case it has created a repository called "`r newrepo`" which can be interacted with at the URL `r createdrepo`
 
