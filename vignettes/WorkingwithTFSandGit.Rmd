@@ -23,7 +23,7 @@ It's a great way to quickly setup a repository if you need to get your stuff int
 
 In terms of actually using your repositories once they're created, I recommend `git2r`.
 
-## Limitations
+### Limitations
 
 - The active components use a Team Project with Git selected as the engine for it
 - Due to the lack of an API call for creating new projects, it is anticipated that you use this to create repositories within a "parent" or container project.
