@@ -1,5 +1,6 @@
 # tfsR
-[![Build Status](https://travis-ci.org/stephlocke/tfsR.png?branch=master)](https://travis-ci.org/stephlocke/tfsR)
+[![Build Status](https://travis-ci.org/stephlocke/tfsR.png?branch=master)](https://travis-ci.org/stephlocke/tfsR)[![Coverage Status](https://coveralls.io/repos/stephlocke/tfsR/badge.svg)](https://coveralls.io/r/stephlocke/tfsR)
+
 If you have/want to work with R using git repositories in TFS (either on-premises or via Visual Studio Online), this package saves you having to have Visual Studio (installed on your machine or online), and allows you directly manage git repositories within TFS.
 
 The package leaves existing git source control functionality to other packages/ facilities.
