@@ -9,7 +9,7 @@ vignette: >
   \usepackage[utf8]{inputenc}
 ---
 
-If you have/want to work with R using git repositories in TFS (either on-premises or via Visual Studio Online), this package saves you having to have Visual Studio (installed on your machine or online), and allows you directly create git repositories within TFS.
+If you have/want to work with R using git repositories in TFS (either on-premises or via Visual Studio Online), tfsR saves you having to have Visual Studio (installed on your machine or online), and allows you to directly create git repositories within TFS.
 
 ## tfsR Information
 
