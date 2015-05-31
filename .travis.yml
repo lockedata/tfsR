@@ -4,5 +4,9 @@ sudo: required
 r_github_packages:
  - jimhester/covr
 
+before_install:
+  - chmod 755 ./.push_gh_pages.sh
+
 after_success:
   - Rscript -e 'library(covr);coveralls()'
+  - ./.push_gh_pages.sh
