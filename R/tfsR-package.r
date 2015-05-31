@@ -15,5 +15,6 @@
 #' @name tfsR
 #' @docType package
 #' @import httr data.table jsonlite
+#' @importFrom random randomStrings
 
 NULL
