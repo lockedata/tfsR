@@ -17,6 +17,7 @@ devtools::install_github("stephlocke/tfsR",
 
 You must have a username (often an email address or AD account) and password for connecting. That's basically it!
 
+NB - you can now use public acces tokens.
 
 ## Limitations
 

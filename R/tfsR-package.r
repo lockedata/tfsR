@@ -6,6 +6,8 @@
 #' 
 #' You must have a username (often an email address or AD account) and password for connecting. That's basically it!
 #' 
+#' NB - you can now use public acces tokens.
+#' 
 #' ## Structure / Methodology
 #' 
 #' The active components use a Team Project containing many git repositories - this means any backlogs etc that you might 
@@ -14,7 +16,8 @@
 #'
 #' @name tfsR
 #' @docType package
-#' @import httr data.table jsonlite
-#' @importFrom random randomStrings
+#' @import data.table
+#' @importFrom httr GET POST content authenticate content_type_json
+#' @importFrom jsonlite fromJSON flatten toJSON
 
 NULL

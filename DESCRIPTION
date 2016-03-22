@@ -1,15 +1,20 @@
 Package: tfsR
 Title: Manage TFS Git Repositories
-Version: 0.1
+Version: 0.1.1
 Authors@R: person("Steph", "Locke", , "stephanie.g.locke@gmail.com", role = c("aut", "cre"))
-Description: Provides functionality for using TFS as your central git repository for R. Primarily makes it easier to create new repositories.
-Depends: R (>= 3.1.2)
+Description: Provides functionality for using TFS as your central git repository
+    for R. Primarily makes it easier to create new repositories.
+Depends:
+    R (>= 3.1.2)
 License: MIT + file LICENSE
 LazyData: true
-Suggests: testthat,
-    knitr
-Imports: httr,
-    data.table,
-    jsonlite,
+Suggests:
+    testthat,
+    knitr,
     random
+Imports:
+    httr,
+    data.table,
+    jsonlite
 VignetteBuilder: knitr
+RoxygenNote: 5.0.1

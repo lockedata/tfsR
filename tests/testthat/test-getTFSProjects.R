@@ -1,8 +1,8 @@
 library(data.table)
 context("getTFSProjects")
 
-tfs<-"https://stefflocke.visualstudio.com"
- authcreds<-httr::authenticate("tfsexample","UsedForExampl3s")
+tfs<-"https://stephlocke.visualstudio.com"
+authcreds<- TFSAuth(pwd="fz43enydh7vi2o6jqir2gmftohh7ooz2lizqvy6jxtw4ltrpwola")
 
 test_that("Defaults work as expected" , {
   tfsprojects<-getTFSProjects(tfs,authcreds)
@@ -21,7 +21,7 @@ test_that("Additional parameters work as expected" , {
 })
 
 test_that("Errors when passed a vector of URLS",{
-  tfs<-c("https://stefflocke.visualstudio.com",
-         "https://stefflocke.visualstudio.com")
+  tfs<-c("https://stephlocke.visualstudio.com",
+         "https://stephlocke.visualstudio.com")
   expect_error(getTFSProjects(tfs,authcreds))
 })

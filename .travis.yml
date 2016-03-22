@@ -1,12 +1,10 @@
 language: r
-sudo: required
-
-r_github_packages:
- - jimhester/covr
-
+warnings_are_errors: true
+cache: packages
+r_packages:
+  - covr
 before_install:
   - chmod 755 ./.push_gh_pages.sh
-
 after_success:
-  - Rscript -e 'library(covr);coveralls()'
+  - Rscript -e 'covr::coveralls()'
   - ./.push_gh_pages.sh

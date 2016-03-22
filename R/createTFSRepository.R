@@ -3,8 +3,8 @@
 #' This produces a repository and returns the URL that can 
 #' be used for pushing/pulling
 #'
-#' @param URL           URL for root TFS e.g. http://stefflocke.visualstudio.com
-#' @param Credentials   `httr::authenticate("username","password")` object
+#' @param URL           URL for root TFS e.g. http://stephlocke.visualstudio.com
+#' @param Credentials  \code{TFSAuth} object
 #' @param ParentProject Name of parent project to store repository in
 #' @param NewRepo       Name for new repository
 #' @param ...           Additional arguments to httr::POST
@@ -16,11 +16,10 @@
 #'
 #' 
 #' @examples
-#' # simple example
-#' tfs          <- "https://stefflocke.visualstudio.com"
-#' authcreds    <- httr::authenticate("tfsexample","UsedForExampl3s")
-#' parentproj   <- "GitRepoContainer"
-#' newrepo      <- as.character(random::randomStrings(n=1, len=6))
+#' tfs        <- "https://stephlocke.visualstudio.com"
+#' authcreds  <- TFSAuth(pwd="fz43enydh7vi2o6jqir2gmftohh7ooz2lizqvy6jxtw4ltrpwola")
+#' parentproj <- "tfsr3"
+#' newrepo    <- as.character(random::randomStrings(n=1, len=6))
 #' 
 #' createdrepo  <- createTFSRepository(tfs,authcreds,parentproj,newrepo)
 #' @export
@@ -50,10 +49,10 @@ createTFSRepository<-function(URL,Credentials,ParentProject,NewRepo,...,URLSub="
   
   # Push new repo to API
   req            <- httr::POST(TFSURL,Credentials,body=newgitrepo, 
-                               encode="json", content_type_json())
+                               encode="json", httr::content_type_json())
   
   # Process JSON response
-  contents       <- httr::content(req,as="text")
+  contents       <- httr::content(req,as="text", encoding = "utf-8")
   projects       <- jsonlite::fromJSON(contents, simplifyDataFrame = TRUE)
   
   return(projects$remoteUrl)
