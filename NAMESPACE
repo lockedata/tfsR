@@ -2,6 +2,7 @@
 
 export(TFSAuth)
 export(createTFSRepository)
+export(deleteTFSRepository)
 export(getTFSProjects)
 import(data.table)
 importFrom(httr,GET)

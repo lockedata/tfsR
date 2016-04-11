@@ -56,14 +56,23 @@ TFS doesn't allow you to create new projects so if you want to create a new repo
 You don't want to start nesting repositories so you need to make the repository under a top-level project. As such, in this bit of functionality, you provide the name of the top-level project which you want to put your repository, and it goes away and gets a GUID if the project exists and is a top-level project, then tells the API to create a repository in it.
 
 ```{r, warning=FALSE}
-
 tfs<-"https://stephlocke.visualstudio.com"
 authcreds<- TFSAuth(pwd="fz43enydh7vi2o6jqir2gmftohh7ooz2lizqvy6jxtw4ltrpwola")
 
 parentproj   <-"tfsr3"
 newrepo      <- as.character(random::randomStrings(n=1, len=6))
 createdrepo  <- createTFSRepository(tfs,authcreds,parentproj,newrepo)
+createdrepo
 ```
 
 This will provide you with the URL you need to be able to push and pull commits to. In this case it has created a repository called "`r newrepo`" which can be interacted with at the URL `r createdrepo`
 
+### Delete a repository
+**USE WITH CAUTION!**
+You can delete a repository programmatically if you so choose. Primarily, I wrote the method to keep these vignettes clean! 
+
+Let's clean up the repo we just made.
+
+```{r, warning=FALSE}
+deleteTFSRepository(tfs,authcreds,newrepo)
+```
