@@ -8,10 +8,19 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
+[![Build Status](https://travis-ci.org/stephlocke/tfsR.png?branch=master)](https://travis-ci.org/stephlocke/tfsR)[![Coverage Status](https://coveralls.io/repos/stephlocke/tfsR/badge.svg)](https://coveralls.io/r/stephlocke/tfsR)
 
 If you have/want to work with R using git repositories in TFS (either on-premises or via Visual Studio Online), tfsR saves you having to have Visual Studio (installed on your machine or online), and allows you to directly create git repositories within TFS.
 
 ## tfsR Information
+
+### Install
+```{r eval=FALSE}
+if (!require(devtools))
+  install.packages("devtools")
+devtools::install_github("stephlocke/tfsR",
+                         build_vignettes = TRUE)
+```
 
 ### Setup
 You must have a username (often an email address or AD account) and password for connecting. That's basically it!
@@ -32,7 +41,7 @@ In terms of actually using your repositories once they're created, I recommend `
 - If you need seperate backlogs etc, you'll have to create new Projects in the GUI
 - This only works currently with *basic authentication*, OAuth2.0 may follow
 - `getTFSProjects` will only handle a single TFS URL at a time (`httr` restriction)
-- `createTFSRepository` will only handle a single repository at a time, to maintain consistency
+- `createTFSRepository` and `deleteTFSRepository` will only handle a single repository at a time, to maintain consistency
 
 ## Using tfsR
 
@@ -68,7 +77,8 @@ createdrepo
 This will provide you with the URL you need to be able to push and pull commits to. In this case it has created a repository called "`r newrepo`" which can be interacted with at the URL `r createdrepo`
 
 ### Delete a repository
-**USE WITH CAUTION!**
+> USE WITH CAUTION!
+
 You can delete a repository programmatically if you so choose. Primarily, I wrote the method to keep these vignettes clean! 
 
 Let's clean up the repo we just made.
