@@ -1,6 +1,6 @@
 Package: tfsR
 Title: Manage TFS Git Repositories
-Version: 0.1.2
+Version: 0.1.3
 Authors@R: person("Steph", "Locke", , "stephanie.g.locke@gmail.com", role = c("aut", "cre"))
 Description: Provides functionality for using TFS as your central git repository
     for R. Primarily makes it easier to create new repositories.

@@ -34,6 +34,7 @@ parentproj <- "tfsr3"
 newrepo    <- as.character(random::randomStrings(n=1, len=6))
 
 createdrepo  <- createTFSRepository(tfs,authcreds,parentproj,newrepo)
+deleted<-deleteTFSRepository(tfs,authcreds,newrepo)
 }
 \keyword{list}
 \keyword{repository}

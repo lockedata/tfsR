@@ -22,6 +22,7 @@
 #' newrepo    <- as.character(random::randomStrings(n=1, len=6))
 #' 
 #' createdrepo  <- createTFSRepository(tfs,authcreds,parentproj,newrepo)
+#' deleted<-deleteTFSRepository(tfs,authcreds,newrepo)
 #' @export
 
 createTFSRepository<-function(URL,Credentials,ParentProject,NewRepo,...,URLSub="DefaultCollection"){
