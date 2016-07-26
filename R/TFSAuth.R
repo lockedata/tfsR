@@ -10,7 +10,9 @@
 #'
 #' @examples
 #' authcreds <- TFSAuth(pwd="fz43enydh7vi2o6jqir2gmftohh7ooz2lizqvy6jxtw4ltrpwola")
-#' authcreds <- TFSAuth(user="username@domain.local", pwd="abc123", type="ntlm")
+#'\dontrun{
+#' authcreds <- TFSAuth(user="dummyuser", pwd="abc123", type="ntlm")
+#'}
 TFSAuth<-function(user ="", pwd, type = NULL){
   if (!is.null(type))
   {
