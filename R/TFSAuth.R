@@ -11,6 +11,7 @@
 #' @examples
 #' authcreds <- TFSAuth(pwd="fz43enydh7vi2o6jqir2gmftohh7ooz2lizqvy6jxtw4ltrpwola")
 #'\dontrun{
+#'#example using ntlm authentication
 #' authcreds <- TFSAuth(user="dummyuser", pwd="abc123", type="ntlm")
 #'}
 TFSAuth<-function(user ="", pwd, type = NULL){
