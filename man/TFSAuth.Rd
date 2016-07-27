@@ -23,9 +23,6 @@ tokens to connect to your TFS instance.
 }
 \examples{
 authcreds <- TFSAuth(pwd="fz43enydh7vi2o6jqir2gmftohh7ooz2lizqvy6jxtw4ltrpwola")
-\dontrun{
-#example using ntlm authentication
-authcreds <- TFSAuth(user="dummyuser", pwd="abc123", type="ntlm")
-}
+authcreds <- TFSAuth(user="tfsRtesting", pwd="tfsRtesting0.1.3", type="basic")
 }
 
