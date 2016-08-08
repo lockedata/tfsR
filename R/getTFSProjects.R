@@ -42,6 +42,10 @@ getTFSProjects<-function(URL,Credentials,..., Flatten=TRUE,URLSub="DefaultCollec
     projects       <- data.table::data.table(
       jsonlite::flatten(projects$value))[
         ,type:=ifelse(name==project.name, "Project", "Sub-Project")]
+    newcols<-setdiff(names(projects),c("id", "name", "url", "remoteUrl", "defaultBranch", "project.id", 
+                       "project.name", "project.url", "project.state", 
+                       "type"))
+    projects[,(newcols):=NULL]
   }
 
   return(projects)
