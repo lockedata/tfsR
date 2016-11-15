@@ -2,7 +2,7 @@
 % Please edit documentation in R/deleteTFSRepository.R
 \name{deleteTFSRepository}
 \alias{deleteTFSRepository}
-\title{Delete a git repository in an existing TFS (Git) Project}
+\title{[DEPRECATED] Delete a git repository in an existing TFS (Git) Project}
 \usage{
 deleteTFSRepository(URL, Credentials, Repo, ..., URLSub = "DefaultCollection")
 }
@@ -22,15 +22,6 @@ Result    String containing delete status
 }
 \description{
 This attempts to delete a repository and returns whether the operation was successful
-}
-\examples{
-tfs        <- "https://stephlocke.visualstudio.com"
-authcreds  <- TFSAuth(pwd="fz43enydh7vi2o6jqir2gmftohh7ooz2lizqvy6jxtw4ltrpwola")
-parentproj <- "tfsr3"
-newrepo    <- as.character(random::randomStrings(n=1, len=6))
-createdrepo  <- createTFSRepository(tfs,authcreds,parentproj,newrepo)
-
-deleteTFSRepository(tfs,authcreds,newrepo)
 }
 \keyword{list}
 \keyword{repository}

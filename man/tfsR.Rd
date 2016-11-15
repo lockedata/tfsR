@@ -4,21 +4,15 @@
 \name{tfsR}
 \alias{tfsR}
 \alias{tfsR-package}
-\title{tfsR
-If you have/want to work with R using git repositories in TFS (either on-premises or via Visual Studio Online), this 
-package saves you having to have Visual Studio installed on your machine.}
+\title{tfsR}
 \description{
-## Setup
+{
+[![Build Status](https://travis-ci.org/stephlocke/tfsR.png?branch=dev)](https://travis-ci.org/stephlocke/tfsR)[![Coverage Status](https://coveralls.io/repos/stephlocke/tfsR/badge.svg)](https://coveralls.io/r/stephlocke/tfsR)
+
+This package allows you to work with Visual Studio Team Services (VSTS) and Team Foundation Server (TFS). 
+The original version(s) of the package were solely aimed creating git repositories but with the ability 
+to create Projects and more, [@velincw](https://github.com/vergilcw) to be a little bit more ambitious! 
+This will be a complete rebuild, with some aliases provided for backwards compatability.
 }
-\details{
-You must have a username (often an email address or AD account) and password for connecting. That's basically it!
-
-NB - you can now use public acces tokens.
-
-## Structure / Methodology
-
-The active components use a Team Project containing many git repositories - this means any backlogs etc that you might 
-wish to use need to be implemented for the entire project. As such, if you want different backlogs and so forth, you 
-will need to create projects via the GUI since no API command exists for the creation of projects.
 }
 

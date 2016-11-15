@@ -1,9 +1,9 @@
 Package: tfsR
-Title: Manage TFS Git Repositories
-Version: 0.1.4
+Title: Work with VSTS and TFS
+Version: 0.2
 Authors@R: person("Steph", "Locke", , "stephanie.g.locke@gmail.com", role = c("aut", "cre"))
-Description: Provides functionality for using TFS as your central git repository
-    for R. Primarily makes it easier to create new repositories.
+Description: Provides an interface to the API for Visual Studio Team Services (VSTS) 
+             and Team Foundation Server (TFS).
 Depends:
     R (>= 3.1.2)
 License: MIT + file LICENSE

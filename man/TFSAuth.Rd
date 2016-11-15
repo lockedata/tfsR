@@ -2,7 +2,7 @@
 % Please edit documentation in R/TFSAuth.R
 \name{TFSAuth}
 \alias{TFSAuth}
-\title{Use alternate authentication credentials or personal access
+\title{[DEPRECATED] Use alternate authentication credentials or personal access
 tokens to connect to your TFS instance.}
 \usage{
 TFSAuth(user = "", pwd, type = NULL)
@@ -18,11 +18,7 @@ TFSAuth(user = "", pwd, type = NULL)
 auth headers
 }
 \description{
-Use alternate authentication credentials or personal access
+[DEPRECATED] Use alternate authentication credentials or personal access
 tokens to connect to your TFS instance.
-}
-\examples{
-authcreds <- TFSAuth(pwd="fz43enydh7vi2o6jqir2gmftohh7ooz2lizqvy6jxtw4ltrpwola")
-authcreds <- TFSAuth(user="tfsRtesting", pwd="tfsRtesting0.1.3", type="basic")
 }
 

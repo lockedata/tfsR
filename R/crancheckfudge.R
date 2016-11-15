@@ -1,1 +1,0 @@
-utils::globalVariables(c("name","type","project.id", "project.name","id"))

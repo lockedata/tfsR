@@ -2,7 +2,7 @@
 % Please edit documentation in R/createTFSRepository.R
 \name{createTFSRepository}
 \alias{createTFSRepository}
-\title{Setup a git repository in an existing TFS (Git) Project}
+\title{[DEPRECATED] Setup a git repository in an existing TFS (Git) Project}
 \usage{
 createTFSRepository(URL, Credentials, ParentProject, NewRepo, ...,
   URLSub = "DefaultCollection")
@@ -26,15 +26,6 @@ RepoURL    String containing location of repository
 \description{
 This produces a repository and returns the URL that can 
 be used for pushing/pulling
-}
-\examples{
-tfs        <- "https://stephlocke.visualstudio.com"
-authcreds  <- TFSAuth(pwd="fz43enydh7vi2o6jqir2gmftohh7ooz2lizqvy6jxtw4ltrpwola")
-parentproj <- "tfsr3"
-newrepo    <- as.character(random::randomStrings(n=1, len=6))
-
-createdrepo  <- createTFSRepository(tfs,authcreds,parentproj,newrepo)
-deleted<-deleteTFSRepository(tfs,authcreds,newrepo)
 }
 \keyword{list}
 \keyword{repository}

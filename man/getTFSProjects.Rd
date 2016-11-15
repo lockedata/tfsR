@@ -2,7 +2,7 @@
 % Please edit documentation in R/getTFSProjects.R
 \name{getTFSProjects}
 \alias{getTFSProjects}
-\title{Get existing TFS (Git) Projects}
+\title{[DEPRECATED] Get existing TFS (Git) Projects}
 \usage{
 getTFSProjects(URL, Credentials, ..., Flatten = TRUE,
   URLSub = "DefaultCollection")
@@ -25,12 +25,6 @@ projects    Data.table (unless Flatten=FALSE, in which case a list) with each pr
 Find out what Projects & repositories exist on TFS.
 This will help you isolate the GUIDs etc needed to add 
 new Git repositories.
-}
-\examples{
-tfs           <- "https://stephlocke.visualstudio.com"
-authcreds     <- TFSAuth(pwd="fz43enydh7vi2o6jqir2gmftohh7ooz2lizqvy6jxtw4ltrpwola")
-tfsprojects   <- getTFSProjects(tfs,authcreds) 
-
 }
 \seealso{
 \code{\link{createTFSRepository}}
